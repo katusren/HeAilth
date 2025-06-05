@@ -52,7 +52,7 @@ AI 기술을 바탕으로 사용자의 건강한 삶을 지원하는 지능형 �
 
 본 애플리케이션의 데이터베이스 구조는 다음 ERD를 통해 한눈에 파악할 수 있습니다. 각 테이블의 상세 스키마는 링크를 클릭하여 확인할 수 있습니다.
 
-[![HeAilth ERD 다이어그램](images/Heailth_ERD.PNG)](docs/ERD.md)
+[![HeAilth ERD 다이어그램](https://raw.githubusercontent.com/katusren/HeAilth/main/image/Heailth_ERD.PNG)](https://github.com/katusren/HeAilth/blob/main/docs/erd.md)
 _위 ERD를 클릭하시면 상세 스키마 설명을 볼 수 있습니다._
 
 ---
