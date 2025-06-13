@@ -1,0 +1,388 @@
+/* 
+생성자 : 문원주
+생성일 : 25.06.13
+파일명 : login.css
+수정자 : 
+수정일 : 
+설명 : LoginScreen의 화면을 꾸며주는 전용 css 파일
+*/
+
+/* --- 색상 팔레트 정의 --- */
+:root {
+    --main-green-dark: #2A9D8F;
+    /* 새롭고 차분한 청록색 계열의 메인 초록색 */
+    --main-green-light: #2EC4B6;
+    /* 메인 초록색의 밝은 톤 */
+    --accent-blue: #007BFF;
+    /* 강조 파란색 */
+    --accent-blue-hover: #0056b3;
+    /* 파란색 호버 톤 */
+    --gray-bg: #f8f9fa;
+    /* 밝은 배경 회색 */
+    --gray-border: #e0e0e0;
+    /* 연한 회색 테두리 */
+    --text-color: #343a40;
+    /* 기본 텍스트 색상 */
+    --placeholder-color: #adb5bd;
+    /* 플레이스홀더 색상 */
+    --link-color: #6c757d;
+    /* 일반 링크 색상 (기존) */
+}
+
+
+/* 기본 설정 및 폰트 적용 */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* 화면 전체 높이를 차지 */
+    /* 미세한 물결 무늬 배경 */
+    background: radial-gradient(circle at 100% 0, var(--gray-bg) 0%, rgba(224, 255, 224, 0.7) 100%);
+    background-size: 200% 200%;
+    /* 배경 크기를 늘려 물결 효과 */
+    animation: wave-background 10s ease infinite alternate;
+    /* 물결 애니메이션 */
+    color: var(--text-color);
+    /* 기본 텍스트 색상 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    /* 배경 애니메이션 시 스크롤바 생기는 것 방지 */
+}
+
+/* 물결 무늬 배경 애니메이션 키프레임 */
+@keyframes wave-background {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* 로그인 화면 전체를 감싸는 래퍼 (중앙 정렬에 사용) */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* 로그인 컨테이너 박스 스타일 */
+.login-container {
+    background-color: #ffffff;
+    /* 컨테이너 배경: 흰색 */
+    padding: 10px 35px 50px;
+    /* 내부 여백 */
+    border-radius: 12px;
+    /* 둥근 모서리 좀 더 강조 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    /* 그림자 효과 더 깊게 */
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    box-sizing: border-box;
+    position: relative;
+    /* 버튼 물결 애니메이션을 위해 필요 */
+    overflow: hidden;
+    /* 물결 애니메이션이 컨테이너 밖으로 나가지 않도록 */
+}
+
+/* 로고/제목 스타일 (그라데이션 및 애니메이션 적용) */
+.logo {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    /* 텍스트의 line-height를 1로 설정하여 불필요한 여백 제거 */
+    padding-top: 5px;
+    /* 시각적 중앙을 맞추기 위한 미세 조정 */
+
+    /* 로고 텍스트에 흐르는 그라데이션 효과 (새로운 초록색 적용) */
+    background: linear-gradient(to right, var(--main-green-dark) 0%, var(--main-green-light) 25%, var(--main-green-dark) 50%, var(--main-green-light) 75%, var(--main-green-dark) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 4s linear infinite;
+}
+
+/* 로고 옆 아이콘 스타일 (양쪽 아이콘) */
+.logo .logo-icon {
+    /* 양쪽 아이콘 공통 스타일 */
+    font-size: 38px;
+    /* 로고 폰트 크기에 맞춰 아이콘 크기 증가 */
+    color: var(--main-green-dark);
+    /* 아이콘 색상도 메인 초록색 */
+}
+
+.logo .left-icon {
+    margin-right: 12px;
+    /* 왼쪽 아이콘 오른쪽 여백 */
+}
+
+.logo .right-icon {
+    margin-left: 12px;
+    /* 오른쪽 아이콘 왼쪽 여백 */
+}
+
+
+/* 슬로건 스타일 */
+.slogan {
+    color: var(--text-color);
+    font-size: 14px;
+    margin-bottom: 35px;
+    line-height: 1.4;
+}
+
+/* 입력 필드 그룹 스타일 (아이콘 포함) */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* 입력 필드 내 아이콘 스타일 */
+.input-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--placeholder-color);
+    /* 아이콘 기본 색상 */
+    font-size: 18px;
+    transition: color 0.2s ease-in-out;
+}
+
+/* 입력 필드 스타일 */
+.input-group input {
+    width: 100%;
+    padding: 14px 12px 14px 45px;
+    /* 왼쪽 패딩을 늘려 아이콘 공간 확보 */
+    border: 1px solid var(--gray-border);
+    /* 연한 회색 테두리 */
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* 입력 필드 포커스 시 스타일 */
+.input-group input:focus {
+    border-color: var(--main-green-dark);
+    /* 포커스 시 메인 초록색 테두리 */
+}
+
+/* 입력 필드 포커스 시 아이콘 색상 변경 */
+.input-group input:focus+.icon {
+    color: var(--main-green-dark);
+    /* 포커스 시 아이콘 색상도 초록색으로 */
+}
+
+/* 플레이스홀더 텍스트 색상 */
+.input-group input::placeholder {
+    color: var(--placeholder-color);
+}
+
+/* 로그인 버튼 스타일 (입체적인 그라데이션 및 물결 애니메이션) */
+.login-button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, var(--main-green-dark), var(--main-green-light));
+    /* 새로운 초록색 그라데이션 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(42, 157, 143, 0.4);
+    /* 새로운 초록색 계열의 그림자 (main-green-dark 기반) */
+    transition: all 0.2s ease-out;
+    margin-top: 15px;
+    overflow: hidden;
+    /* 물결 효과가 버튼 밖으로 나가지 않도록 */
+    z-index: 1;
+    /* 물결 효과가 버튼 아래에 깔리지 않도록 */
+}
+
+/* 버튼 호버 시 스타일 */
+.login-button:hover {
+    background: linear-gradient(to right, var(--main-green-light), var(--main-green-dark));
+    /* 그라데이션 방향 또는 색상 살짝 변경 */
+    box-shadow: 0 6px 20px rgba(42, 157, 143, 0.5);
+    transform: translateY(-2px);
+}
+
+/* 버튼 클릭 시 (눌렸을 때) 스타일 */
+.login-button:active {
+    background: linear-gradient(to right, #20877C, #1D736A);
+    /* 눌릴 때 더 어두운 그라데이션 */
+    box-shadow: 0 2px 5px rgba(42, 157, 143, 0.3);
+    transform: translateY(1px);
+    /* 물결 애니메이션은 JS로 동적으로 적용 */
+}
+
+
+/* 보조 링크 섹션 스타일 */
+.additional-links {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--link-color);
+    /* 기존 링크 색상 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 보조 링크 개별 스타일 */
+.additional-links .link {
+    color: var(--link-color);
+    /* 기본 링크 색상 */
+    text-decoration: none;
+    padding: 0 10px;
+    transition: color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+/* 보조 링크 호버 시 스타일 */
+.additional-links .link:hover {
+    color: var(--main-green-dark);
+    /* 초록색으로 호버 */
+}
+
+/* 파란색 링크 스타일 (회원가입, 아이디/비밀번호 찾기) */
+.additional-links .blue-link {
+    color: var(--text-color);
+    /* 파란색 적용 */
+}
+
+.additional-links .blue-link:hover {
+    color: var(--accent-blue-hover);
+    /* 파란색 호버 톤 */
+}
+
+/* 파란색 링크 클릭 시 스타일 */
+.additional-links .blue-link:active {
+    color: var(--accent-blue-hover);
+    /* 클릭 시 파란색의 더 어두운 톤으로 */
+    transform: scale(0.98);
+    /* 살짝 줄어드는 효과 */
+}
+
+/* 보조 링크 사이 구분선 스타일 */
+.additional-links .divider {
+    width: 1px;
+    height: 14px;
+    background-color: var(--gray-border);
+    margin: 0;
+}
+
+/* 미디어 쿼리: 모바일 화면 최적화 */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px;
+        padding: 30px 20px;
+        border-radius: 10px;
+        /* 모바일에서 살짝 덜 둥글게 */
+    }
+
+    .logo {
+        font-size: 38px;
+        /* 모바일에서는 로고 폰트 살짝 작게 조절 */
+        margin-bottom: 10px;
+        padding-top: 0;
+    }
+
+    .logo .logo-icon {
+        font-size: 30px;
+    }
+
+    .logo .left-icon {
+        margin-right: 10px;
+    }
+
+    .logo .right-icon {
+        margin-left: 10px;
+    }
+
+    .slogan {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .input-group input {
+        font-size: 15px;
+        padding: 12px 10px 12px 40px;
+    }
+
+    .input-group .icon {
+        left: 12px;
+        font-size: 16px;
+    }
+
+    .login-button {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .additional-links {
+        font-size: 13px;
+        margin-top: 25px;
+    }
+
+    .additional-links .link {
+        padding: 0 8px;
+    }
+}
+
+
+/* --- 로고 그라데이션 애니메이션 정의 --- */
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* --- 버튼 물결 애니메이션 정의 --- */
+/* (이 애니메이션은 JavaScript를 통해 동적으로 생성되는 요소를 제어합니다) */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(2.5);
+        /* 물결이 더 크게 퍼지도록 */
+        opacity: 0;
+    }
+}
+
+/* JavaScript로 동적으로 추가될 물결 요소 스타일 */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* 흰색 물결 */
+    pointer-events: none;
+    /* 클릭 이벤트가 물결에 가로막히지 않도록 */
+    animation: ripple 0.6s linear forwards;
+    /* 물결 애니메이션 적용 */
+    transform: scale(0);
+    /* 초기 크기는 0 */
+}
