@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!--
+생성자 : 문원주
+생성일 : 25.06.13
+파일명 : SignUp.html
+수정자 : 
+수정일 : 
+설명 : 회원가입 메인 html
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeAilth 회원가입</title>
+    <link rel="stylesheet" href="./css/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="signup-wrapper">
+        <div class="signup-container">
+            <h1 class="logo">
+                <i class="fas fa-heartbeat logo-icon left-icon"></i> HeAilth <i
+                    class="fas fa-person-running logo-icon right-icon"></i>
+            </h1>
+            <p class="slogan">당신의 건강한 삶, 지금 시작하세요!</p>
+
+            <div class="progress-indicator">
+                <div class="step active" data-step="1">1. 계정 정보</div>
+                <div class="step" data-step="2">2. 개인 정보</div>
+                <div class="step" data-step="3">3. 약관 동의</div>
+            </div>
+
+            <form id="signupForm" class="signup-form">
+
+                <div class="form-step active" data-step="1">
+                    <h2>계정 정보를 입력해주세요</h2>
+                    <div class="input-group">
+                        <i class="fas fa-user icon"></i>
+                        <input type="text" id="signup-username" placeholder="아이디" required>
+                        <button type="button" class="check-button" data-check-type="username">중복 확인</button>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="signup-password" placeholder="비밀번호 (8~16자, 영문,숫자,특수문자 포함)" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" id="signup-password-confirm" placeholder="비밀번호 확인" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" id="signup-email" placeholder="이메일 주소" required>
+                        <button type="button" class="check-button" data-check-type="email">인증 요청</button>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-key icon"></i>
+                        <input type="text" id="signup-email-code" placeholder="이메일 인증번호" disabled>
+                        <button type="button" class="check-button" data-check-type="email-confirm" disabled>인증
+                            확인</button>
+                    </div>
+                    <button type="button" class="next-step-button">다음</button>
+                </div>
+
+                <div class="form-step" data-step="2">
+                    <h2>개인 정보를 입력해주세요</h2>
+                    <div class="input-group">
+                        <i class="fas fa-address-card icon"></i>
+                        <input type="text" id="signup-name" placeholder="이름" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-calendar-alt icon"></i>
+                        <input type="date" id="signup-birthdate" placeholder="생년월일" required>
+                    </div>
+                    <div class="input-group radio-group">
+                        <i class="fas fa-venus-mars icon"></i>
+                        <label>성별:</label>
+                        <input type="radio" id="gender-male" name="gender" value="male">
+                        <label for="gender-male">남</label>
+                        <input type="radio" id="gender-female" name="gender" value="female">
+                        <label for="gender-female">여</label>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone icon"></i>
+                        <input type="tel" id="signup-phone" placeholder="휴대폰 번호 (예: 010-1234-5678)" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="prev-step-button">이전</button>
+                        <button type="button" class="next-step-button">다음</button>
+                    </div>
+                </div>
+
+                <div class="form-step" data-step="3">
+                    <h2>약관에 동의해주세요</h2>
+                    <div class="terms-agreements">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-all">
+                            <label for="agree-all">모든 약관에 동의합니다. (선택 약관 포함)</label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-service" required>
+                            <label for="agree-service">서비스 이용약관 동의 (필수)</label>
+                            <a href="#" class="view-terms">자세히 보기</a>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-privacy" required>
+                            <label for="agree-privacy">개인정보 수집 및 이용 동의 (필수)</label>
+                            <a href="#" class="view-terms">자세히 보기</a>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="agree-marketing">
+                            <label for="agree-marketing">마케팅 정보 수신 동의 (선택)</label>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="prev-step-button">이전</button>
+                        <button type="submit" class="signup-final-button">회원가입</button>
+                    </div>
+                </div>
+
+            </form>
+
+            <div class="additional-links">
+                <a href="login.html" class="link blue-link">로그인 페이지로 돌아가기</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/signup.js"></script>
+</body>
+
+</html>
