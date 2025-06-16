@@ -153,4 +153,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 초기화
     showStep(currentStep);
-}); s
+});

@@ -11,12 +11,17 @@
 -->
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeAilth 회원가입</title>
-    <link rel="stylesheet" href="./css/signup.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="./css/common.css">
+        <link rel="stylesheet" href="./css/signup.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
 </head>
 
 <body>
@@ -77,15 +82,16 @@
                     </div>
                     <div class="input-group radio-group">
                         <i class="fas fa-venus-mars icon"></i>
-                        <label>성별:</label>
-                        <input type="radio" id="gender-male" name="gender" value="male">
-                        <label for="gender-male">남</label>
-                        <input type="radio" id="gender-female" name="gender" value="female">
-                        <label for="gender-female">여</label>
-                    </div>
-                    <div class="input-group">
-                        <i class="fas fa-phone icon"></i>
-                        <input type="tel" id="signup-phone" placeholder="휴대폰 번호 (예: 010-1234-5678)" required>
+                        <span class="radio-label">성별:</span>
+
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="gender" value="male"> 남
+                            </label>
+                            <label>
+                                <input type="radio" name="gender" value="female"> 여
+                            </label>
+                        </div>
                     </div>
                     <div class="button-group">
                         <button type="button" class="prev-step-button">이전</button>
@@ -124,7 +130,7 @@
             </form>
 
             <div class="additional-links">
-                <a href="login.html" class="link blue-link">로그인 페이지로 돌아가기</a>
+                <a href="LoginScreen.html" class="link blue-link">로그인 페이지로 돌아가기</a>
             </div>
         </div>
     </div>

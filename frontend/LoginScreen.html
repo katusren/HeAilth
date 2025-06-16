@@ -5,18 +5,21 @@
 생성자 : 문원주
 생성일 : 25.06.13
 파일명 : LoginScreen.html
-수정자 : 
-수정일 : 
-설명 : 로그인 메인 화면에 대한 html
+수정자 : 문원주
+수정일 : 25.06.16
+설명 : 아이디 찾기&비밀번호 찾기 모달창 구현
 -->
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HeAilth 로그인</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/modal.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 </head>
 
 <body>
@@ -41,15 +44,67 @@
             </form>
 
             <div class="additional-links">
-                <a href="signup.html" class="link blue-link">회원가입</a> <span class="divider"></span>
-                <a href="#" class="link blue-link">아이디 찾기</a>
+                <a href="signup.html" class="link blue-link">회원가입</a>
                 <span class="divider"></span>
-                <a href="#" class="link blue-link">비밀번호 찾기</a>
+                <a href="#" id="find-id-link" class="link blue-link">아이디 찾기</a> <span class="divider"></span>
+                <a href="#" id="find-pw-link" class="link blue-link">비밀번호 찾기</a>
             </div>
         </div>
     </div>
 
+    <div id="find-id-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h2>아이디 찾기</h2>
+            <form class="modal-form">
+                <p class="modal-description">이름과 이메일 주소를 입력해주세요.</p>
+                <div class="input-group">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" id="find-id-name" placeholder="이름" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" id="find-id-email" placeholder="이메일 주소" required>
+                </div>
+                <button type="submit" class="modal-submit-button">아이디 찾기</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="find-pw-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h2>비밀번호 찾기</h2>
+            <form class="modal-form">
+                <p class="modal-description">아이디, 이름, 이메일 주소를 입력해주세요.</p>
+                <div class="input-group">
+                    <i class="fas fa-user-circle icon"></i>
+                    <input type="text" id="find-pw-username" placeholder="아이디" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" id="find-pw-name" placeholder="이름" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="email" id="find-pw-email" placeholder="이메일 주소" required>
+                </div>
+                <button type="submit" class="modal-submit-button">비밀번호 찾기</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="result-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <h2>아이디 찾기 결과</h2>
+            <p class="modal-description" id="found-id-message">귀하의 아이디는 <strong id="found-id-display"></strong> 입니다.</p>
+            <button type="button" class="modal-confirm-button">확인</button>
+        </div>
+    </div>
+
     <script src="./js/login.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 
 </html>
