@@ -1,84 +1,32 @@
-/* 
+/*
 생성자 : 문원주
 생성일 : 25.06.13
 파일명 : signup.css
 수정자 : 
-수정일 : 
 설명 : SignUp.html의 화면을 꾸며주는 전용 css 파일
 */
 
 
-:root {
-    --main-green-dark: #2a9d8f;
-    /* 주 녹색 (진한) */
-    --main-green-light: #2ec4b6;
-    /* 주 녹색 (밝은) */
-    --accent-blue: #007bff;
-    /* 강조 파란색 */
-    --accent-blue-hover: #0069d9;
-    /* 강조 파란색 호버 */
-    --gray-background: #f0f2f5;
-    /* 회색 배경 */
-    --gray-border: #dee2e6;
-    /* 회색 테두리 */
-    --text-color: #333333;
-    /* 기본 텍스트 색상 */
-    --link-color: #007bff;
-    /* 링크 색상 */
-    --placeholder-color: #6c757d;
-    /* 플레이스홀더 색상 */
-    --error-red: #dc3545;
-    /* 에러 메시지 빨간색 */
-}
-
-/* 기본 설정 및 폰트 적용 (body) */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text-color);
+    /* common.css에서 정의된 내용은 제거 */
     background-color: var(--gray-background);
     /* 전체 배경색 */
-
-    /* 화면 중앙 정렬 및 최소 높이 설정 */
-    display: flex;
-    justify-content: center;
     align-items: flex-start;
-    /* 상단 정렬로 변경 (padding-top 필요시 추가) */
     min-height: 100vh;
-    /* 뷰포트 높이의 100%를 최소 높이로 설정 */
     overflow: hidden;
-    /* 배경 애니메이션 시 스크롤바 방지 */
     padding-top: 50px;
     /* 로고와 컨테이너 전체를 살짝 내리기 위해 추가 */
 }
 
-/* 로고 스타일 */
+/* 로고 스타일 (크기 및 여백만 남김) */
 .logo {
     font-size: 38px;
-    font-weight: 700;
     margin-bottom: 10px;
-    background: linear-gradient(to right, var(--main-green-dark), var(--main-green-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    /* 그라데이션 적용을 위해 필요 */
-    position: relative;
     padding: 0 10px;
-    /* 아이콘과의 간격 */
-    letter-spacing: -1px;
-    /* 글자 간격 조정 */
 }
 
-.logo-icon {
-    font-size: 28px;
-    vertical-align: middle;
-    -webkit-text-fill-color: var(--main-green-dark);
-    /* 아이콘은 투명하게 하지 않음 */
-    background: none;
-    /* 아이콘에는 그라데이션 적용 안함 */
-}
-
+/* .logo-icon은 common.css에 있으므로, 여기서는 고유한 스타일만 유지 */
+/* vertical-align: middle;는 flexbox 환경에서 효과가 없으므로 제거 */
 .logo-icon.left-icon {
     margin-right: 8px;
 }
@@ -87,10 +35,9 @@ body {
     margin-left: 8px;
 }
 
-/* 슬로건 스타일 */
+/* 슬로건 스타일 (여백만 남김) */
 .slogan {
     font-size: 16px;
-    color: var(--placeholder-color);
     margin-top: 0;
     margin-bottom: 30px;
 }
@@ -98,17 +45,13 @@ body {
 /* 회원가입 컨테이너는 login-container와 유사하게, 조금 더 넓게 설정 */
 .signup-container {
     background-color: #ffffff;
-    padding: 10px 35px 50px;
-    /* 상단 패딩 10px, 좌우 35px, 하단 50px (조절된 값) */
+    padding: 30px 45px 50px;
+    /* 상단 패딩 증가, 좌우 패딩 증가 (조절된 값) */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    /* 그림자도 login과 유사하게 */
     text-align: center;
     width: 100%;
     max-width: 680px;
-    /* 600px -> 680px로 증가 */
-    padding: 30px 45px 50px;
-    /* 상단 패딩 증가, 좌우 패딩 증가 */
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
@@ -130,7 +73,6 @@ body {
     padding: 5px 10px;
     position: relative;
     cursor: default;
-    /* 클릭 방지 */
 }
 
 .progress-indicator .step.active {
@@ -143,7 +85,6 @@ body {
     content: '';
     position: absolute;
     bottom: -11px;
-    /* border-bottom 아래로 내려오게 */
     left: 0;
     width: 100%;
     height: 3px;
@@ -154,14 +95,11 @@ body {
 /* 각 단계 폼 숨기기/보이기 */
 .form-step {
     display: none;
-    /* 기본적으로 모든 단계 숨김 */
     animation: fadeIn 0.4s ease-out;
-    /* 단계 전환 시 부드럽게 나타나도록 */
 }
 
 .form-step.active {
     display: block;
-    /* 활성 단계만 보이기 */
 }
 
 /* 단계별 제목 */
@@ -176,54 +114,23 @@ body {
 /* input-group (아이콘 + input + 버튼의 기본 레이아웃) */
 .signup-form .input-group {
     display: flex;
-    /* flexbox로 내부 요소 정렬 */
     align-items: center;
-    /* 세로 중앙 정렬 */
     justify-content: center;
-    /* 수평 중앙 정렬 */
-    margin-bottom: 15px;
-    max-width: 500px;
-    /* 450px -> 500px로 증가 */
     margin-bottom: 20px;
-    /* 하단 마진 살짝 증가 */
+    max-width: 500px;
     margin-left: auto;
-    /* 좌우 자동 마진으로 중앙 정렬 */
     margin-right: auto;
-    /* 좌우 자동 마진으로 중앙 정렬 */
-    position: relative;
-    /* 아이콘 absolute 포지셔닝을 위한 기준점 */
 }
 
 .signup-form .input-group input {
     flex-grow: 1;
-    /* input이 남은 공간을 차지하도록 설정 */
     max-width: none;
-    /* flex-grow를 사용하므로 max-width는 필요 없음 */
     margin: 0;
-    /* flex 컨테이너 내부이므로 margin 초기화 */
-    padding: 14px 12px 14px 45px;
-    /* 아이콘 공간 확보를 위한 왼쪽 패딩 */
-    border: 1px solid var(--gray-border);
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    outline: none;
-    transition: border-color 0.2s ease-in-out;
 }
 
-/* input-group 안의 아이콘 */
+/* input-group 안의 아이콘 (common.css에서 정의된 스타일 외의 부분만 남김) */
 .signup-form .input-group .icon {
-    position: absolute;
-    /* 절대 위치로 */
-    left: 15px;
-    /* 왼쪽에서 15px */
-    color: var(--placeholder-color);
-    font-size: 18px;
-    /* 아이콘이 input 높이 중앙에 오도록 조정 */
-    top: 50%;
-    transform: translateY(-50%);
     pointer-events: none;
-    /* 아이콘 클릭 방지 */
 }
 
 /* input-group 안의 버튼 (중복 확인, 인증 요청/확인) */
@@ -239,7 +146,6 @@ body {
     transition: background-color 0.2s ease-in-out;
     white-space: nowrap;
     flex-shrink: 0;
-    /* 버튼이 줄어들지 않도록 */
 }
 
 .input-group .check-button:hover {
@@ -253,89 +159,75 @@ body {
 
 /* 라디오 버튼 그룹 */
 .input-group.radio-group {
+    display: flex;
     justify-content: flex-start;
-    /* 라디오 버튼은 좌측 정렬 (그대로 유지) */
-    padding-left: 0;
-    /* 이 패딩은 필요 없으므로 제거 */
+    /* 좌측 정렬 */
+    align-items: center;
+    /* 세로 중앙 정렬 */
     margin-bottom: 20px;
-    /* max-width는 input-group이 이미 가지고 있으므로 중복X */
+    padding-left: 0;
+    /* 불필요한 패딩 제거 */
 }
 
 .input-group.radio-group .icon {
-    /* 아이콘을 flexbox 흐름 안에 두기 위해 다시 조정 */
     position: static;
-    /* absolute를 다시 static으로 변경 */
     transform: none;
-    /* 변형 제거 */
     top: auto;
-    /* top 속성 제거 */
     margin-right: 15px;
-    /* 아이콘과 "성별:" 텍스트 사이 간격 */
+    /* 아이콘과 '성별:' 텍스트 사이 간격 */
     margin-left: 0;
-    /* 좌우 마진 초기화 */
     flex-shrink: 0;
-    /* 아이콘이 줄어들지 않도록 */
 }
 
-.input-group.radio-group label {
-    /* 라벨과 라디오 버튼 사이 간격 조절 */
+/* '성별:' 텍스트를 위한 새로운 스타일 */
+.input-group.radio-group .radio-label {
     font-size: 16px;
     color: var(--text-color);
-    margin-right: 10px;
-    /* 라디오 버튼 (남/여)과 레이블 간격 */
-    cursor: pointer;
+    margin-right: 20px;
+    /* '성별:' 텍스트와 첫 번째 라디오 버튼 사이 간격 */
+    flex-shrink: 0;
 }
 
+/* 라디오 버튼 자체의 스타일 */
 .input-group.radio-group input[type="radio"] {
     margin-right: 5px;
-    /* 라디오 버튼과 텍스트 사이 간격 */
-    transform: scale(1.2);
+    /* 라디오 버튼과 그 뒤 '남' 또는 '여' 텍스트 사이 간격 */
+    transform: scale(1.15);
     cursor: pointer;
+    flex-shrink: 0;
 }
+
+/* '남', '여' 텍스트 라벨 스타일 */
+.input-group.radio-group label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-right: 25px;
+    /* '남' 라벨과 '여' 라벨 사이 간격 */
+    line-height: 1;
+    /* 텍스트의 라인 높이 조절 */
+    flex-shrink: 0;
+}
+
+.input-group.radio-group .radio-options {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 
 /* 버튼 그룹 스타일 추가 (수평 정렬) */
 .button-group {
     display: flex;
     justify-content: center;
-    /* 버튼들을 중앙에 정렬 */
     gap: 20px;
-    /* 버튼들 사이의 간격 */
     margin-top: 35px;
-    /* 상단 여백 (폼과 버튼 간 간격) */
     max-width: 500px;
-    /* input-group과 동일한 너비로 제한 */
     margin-left: auto;
-    /* 중앙 정렬 */
     margin-right: auto;
-    /* 중앙 정렬 */
-}
-
-/* 네비게이션 버튼 (이전/다음/회원가입) - 기존 스타일 수정 */
-.prev-step-button,
-.next-step-button,
-.signup-final-button {
-    width: 100%;
-    /* max-width는 이제 button-group이 제어하므로 여기서는 제거하거나 더 작게 설정 */
-    max-width: 240px;
-    /* 버튼 개별 최대 너비. 2개 버튼이 나란히 놓일 때 적절하게 */
-    /* padding, border, radius, font-size 등은 그대로 유지 */
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s ease-out;
-    /* margin-top은 이제 button-group에서 제어하므로 여기서 제거 */
-    margin-top: 0;
-    /* display: inline-block; 대신 flex item으로 동작 */
-}
-
-.prev-step-button {
-    background-color: var(--gray-border);
-    color: var(--text-color);
-    /* margin-right: 10px; 대신 gap으로 조절 */
-    margin-right: 0;
 }
 
 /* 네비게이션 버튼 (이전/다음/회원가입) */
@@ -344,7 +236,6 @@ body {
 .signup-final-button {
     width: 100%;
     max-width: 200px;
-    /* 버튼 너비 제한 */
     padding: 14px;
     border: none;
     border-radius: 6px;
@@ -353,16 +244,13 @@ body {
     cursor: pointer;
     transition: all 0.2s ease-out;
     margin-top: 25px;
-    /* 상단 여백 */
     display: inline-block;
-    /* 버튼 정렬을 위해 */
 }
 
 .prev-step-button {
     background-color: var(--gray-border);
     color: var(--text-color);
     margin-right: 10px;
-    /* 다음 버튼과의 간격 */
 }
 
 .prev-step-button:hover {
@@ -422,40 +310,40 @@ body {
     text-decoration: underline;
 }
 
-/* 추가 링크 (로그인 페이지로 돌아가기 등) */
+/* 추가 링크 (로그인 페이지로 돌아가기 등) - common.css에 있으므로 고유한 margin-top만 남김 */
 .additional-links {
     margin-top: 30px;
-    font-size: 14px;
-    color: var(--link-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.additional-links .link {
-    color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-}
-
-.additional-links .link:hover {
-    color: var(--main-green-dark);
-}
-
-.additional-links .divider {
-    color: var(--gray-border);
-    margin: 0 10px;
-}
-
-/* 애니메이션 */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+/* 모바일 미디어 쿼리 (추가 또는 조정) */
+@media (max-width: 480px) {
+    .input-group.radio-group {
+        flex-wrap: wrap;
+        /* 내용이 넘칠 경우 줄바꿈 허용 */
+        justify-content: center;
+        /* 중앙 정렬 */
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .input-group.radio-group .icon,
+    .input-group.radio-group .radio-label {
+        flex-basis: 100%;
+        /* 아이콘과 성별 텍스트는 한 줄 전체 차지 */
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* 아래 여백 추가 */
+    }
+
+    .input-group.radio-group input[type="radio"],
+    .input-group.radio-group label {
+        margin-bottom: 5px;
+        /* 각 라디오 버튼 옵션 아래 여백 */
+        margin-right: 15px;
+        /* 옵션 간 간격 유지 */
+    }
+
+    .input-group.radio-group label:last-of-type {
+        margin-right: 0;
+        /* 마지막 옵션은 우측 마진 제거 */
     }
 }
