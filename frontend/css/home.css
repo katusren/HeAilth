@@ -1,0 +1,761 @@
+/*
+생성자 : 문원주
+생성일 : 2025.06.16
+파일명 : home.css
+수정자 : 
+수정일 : 
+설명 : Home.html의 화면을 꾸며주는 전용 css 파일
+*/
+
+body {
+    background-color: var(--gray-bg, #f8f9fa);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* 1번 박스: 헤더 스타일 (캡처1의 디자인을 차용) */
+.main-header {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-header .logo {
+    margin: 0 20px 0 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.main-header .logo-icon {
+    font-size: 24px;
+}
+
+.welcome-message {
+    font-size: 16px;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin: 0;
+}
+
+.welcome-message #user-display-name {
+    color: var(--main-green-dark);
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav .nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link.active {
+    color: var(--main-green-dark);
+}
+
+.main-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-green-light);
+    border-radius: 2px;
+}
+
+.profile-icon {
+    font-size: 28px;
+    color: var(--main-green-dark);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* 메인 콘텐츠 레이아웃 (캡처2의 좌/우 컬럼 구조) */
+.main-content-layout {
+    flex-grow: 1;
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* justify-content: space-between; 제거: 캘린더/메모의 동적 높이 조절을 위해 */
+}
+
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dashboard-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-section h2,
+.dashboard-section h3 {
+    color: var(--main-green-dark);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* 2번 박스: AI 응원 메시지 카드 (좌우 꽉 차게) */
+.ai-message-card {
+    width: 100%;
+}
+
+.ai-message-card h2 {
+    font-size: 22px;
+}
+
+.ai-message-card .ai-message-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: var(--main-green-dark);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.ai-message-card .ai-icon {
+    font-size: 36px;
+    color: white;
+}
+
+.ai-message-card #ai-daily-message {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* 작은 버튼 스타일 및 그라데이션 (2번 박스 버튼 포함) */
+.small-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-top: 15px;
+    display: inline-block;
+    min-width: unset;
+}
+
+.small-button.gradient-button {
+    background: linear-gradient(to right, var(--main-green-dark), var(--main-green-light));
+    color: white;
+}
+
+.small-button.gradient-button:hover {
+    background: linear-gradient(to right, var(--main-green-light), var(--main-green-dark));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 나의 건강 요약 섹션 */
+.my-health-summary-section h2 {
+    font-size: 22px;
+}
+
+.health-summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.health-summary-cards .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.health-summary-cards .card h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.score-display,
+.calorie-display,
+.workout-display {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.score-value,
+.calorie-value,
+.workout-value {
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--main-green-dark);
+    line-height: 1;
+}
+
+.score-unit,
+.calorie-unit,
+.workout-unit {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-left: 5px;
+}
+
+.score-comment,
+.calorie-target,
+.workout-comment {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    min-height: 40px;
+    font-weight: 500;
+}
+
+/* 나의 건강 요약 카드 내 버튼들 */
+.health-summary-cards .card .card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.health-summary-cards .card .card-buttons .small-button {
+    margin-top: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* 주간 목표 현황 (이제 right-column에 위치) */
+.weekly-goals-summary-section {
+    padding: 25px;
+    flex-grow: 1;
+    /* 남은 공간을 유연하게 채우도록 */
+    display: flex;
+    flex-direction: column;
+}
+
+.weekly-goals-summary-section h2 {
+    font-size: 22px;
+}
+
+.weekly-goals-summary-section .all-goals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    flex-grow: 1;
+    align-content: start;
+}
+
+
+.all-goals-container .goal-item {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.all-goals-container .goal-item p {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.all-goals-container .goal-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+
+.all-goals-container .goal-item h3 i {
+    color: var(--main-green-dark);
+    margin-right: 8px;
+}
+
+
+.all-goals-container .goal-item p i {
+    color: var(--main-green-light);
+    margin-right: 8px;
+}
+
+.all-goals-container .goal-item span {
+    font-weight: 600;
+    color: var(--main-green-dark);
+}
+
+.all-goals-container .progress-bar-container {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    height: 8px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.all-goals-container .progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, var(--main-green-dark), var(--main-green-light));
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.all-goals-container .progress-text {
+    font-size: 12px;
+    color: var(--text-placeholder);
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+    width: 100%;
+}
+
+
+/* 월별 건강 점수 요약 (고급스러운 캘린더 디자인 - 이제 left-column에 위치) */
+.monthly-score-summary {
+    padding: 25px;
+    flex-grow: 1;
+    /* 남은 공간을 유연하게 채우도록 */
+    display: flex;
+    flex-direction: column;
+}
+
+.monthly-score-summary h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.month-navigation .nav-arrow {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--main-green-dark);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.month-navigation .nav-arrow:hover {
+    background-color: var(--main-green-light);
+    color: white;
+    border-color: var(--main-green-light);
+}
+
+.calendar-grid-container {
+    flex-grow: 1;
+    /* 캘린더 그리드도 남은 공간 채우도록 */
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+}
+
+.calendar-header .day-name {
+    text-align: center;
+    font-weight: 700;
+    color: var(--main-green-dark);
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+    flex-grow: 1;
+    /* 이 부분이 캘린더 높이를 유연하게 만듦 */
+}
+
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    min-height: 70px;
+    /* 기본 높이 유지 */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.calendar-day.other-month {
+    color: var(--text-placeholder);
+    background-color: var(--gray-bg);
+    border: 1px dashed var(--border-color);
+}
+
+.calendar-day .date {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    z-index: 1;
+}
+
+/* 새로운 점수 인디케이터 스타일 */
+.calendar-day .score-indicator {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 5px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day .score-indicator.good {
+    background-color: #4CAF50;
+}
+
+.calendar-day .score-indicator.normal {
+    background-color: #FFC107;
+}
+
+.calendar-day .score-indicator.bad {
+    background-color: #DC3545;
+}
+
+.calendar-day.current-day {
+    background-color: var(--main-green-light);
+    border-color: var(--main-green-dark);
+    box-shadow: 0 0 15px rgba(46, 196, 182, 0.3);
+}
+
+.calendar-day.current-day .date {
+    color: white;
+}
+
+.calendar-day.current-day .score-indicator {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+
+/* 나의 메모 및 칭호/업적 (이제 left-column에 위치) */
+.memo-achievements-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    flex-grow: 1;
+    /* 남은 공간을 유연하게 채우도록 */
+}
+
+.memo-achievements-container .card {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-height: 150px;
+}
+
+.memo-achievements-container .card h3 {
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.memo-achievements-container .card h3 i {
+    color: var(--main-green-dark);
+    font-size: 20px;
+}
+
+.notes-textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s ease;
+    flex-grow: 1;
+}
+
+.notes-textarea:focus {
+    border-color: var(--main-green-dark);
+}
+
+.notes-textarea::placeholder {
+    color: var(--text-placeholder);
+}
+
+.achievement-display {
+    margin-bottom: 15px;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.current-achievement {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--main-green-dark);
+    margin-bottom: 5px;
+}
+
+.achievement-description {
+    font-size: 13px;
+    color: var(--text-placeholder);
+}
+
+
+/* 푸터 */
+.main-footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-placeholder);
+    font-size: 14px;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .main-content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        padding-top: 0;
+    }
+
+    .main-header {
+        padding: 15px 20px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .main-nav li {
+        margin: 5px 10px;
+    }
+
+    .memo-achievements-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-height: unset;
+    }
+
+    .memo-achievements-container .card {
+        flex-basis: calc(50% - 10px);
+        min-width: 300px;
+        min-height: unset;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-left {
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .main-header .logo {
+        margin-right: 0;
+    }
+
+    .welcome-message {
+        margin-left: auto;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .main-nav li {
+        margin: 5px 0;
+    }
+
+    .main-nav .nav-link {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .profile-icon {
+        display: none;
+    }
+
+    .dashboard-section {
+        padding: 20px;
+    }
+
+    .health-summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* 나의 건강 요약 카드 내 버튼들 모바일 최적화 */
+    .health-summary-cards .card .card-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .health-summary-cards .card .card-buttons .small-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+
+    .calendar-day {
+        min-height: 50px;
+        font-size: 11px;
+    }
+
+    .calendar-day .date {
+        font-size: 13px;
+    }
+
+    .calendar-day .score-indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .ai-message-card .ai-message-content {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .ai-message-card #ai-daily-message {
+        font-size: 15px;
+    }
+
+    .small-button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    .all-goals-container {
+        grid-template-columns: 1fr;
+    }
+
+    .memo-achievements-container {
+        flex-direction: column;
+    }
+
+    .memo-achievements-container .card {
+        flex-basis: auto;
+        min-width: unset;
+    }
+
+    .notes-textarea {
+        min-height: 80px;
+    }
+}
