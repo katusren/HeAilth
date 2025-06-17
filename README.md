@@ -90,6 +90,7 @@ _위 ERD를 클릭하시면 상세 스키마 설명을 볼 수 있습니다._
 ### 1. 로그인 화면
 
 사용자가 계정으로 로그인할 수 있는 페이지입니다.
+
 ![로그인 화면](https://raw.githubusercontent.com/katusren/HeAilth/main/image/Login.PNG)
 
 ### 2. 메인 화면 (홈 화면)
