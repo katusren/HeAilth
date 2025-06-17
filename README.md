@@ -85,9 +85,18 @@ _위 ERD를 클릭하시면 상세 스키마 설명을 볼 수 있습니다._
 
 ---
 
-## 📷 예시 화면 (추후 이미지 추가 예정)
-(https://raw.githubusercontent.com/katusren/HeAilth/main/image/Heailth_Login.PNG)
+## 📷 예시 화면
 
-(https://raw.githubusercontent.com/katusren/HeAilth/main/image/Home.PNG)
+### 1. 로그인 화면
+
+사용자가 계정으로 로그인할 수 있는 페이지입니다.
+![로그인 화면](https://raw.githubusercontent.com/katusren/HeAilth/main/image/Login.PNG)
+
+### 2. 메인 화면 (홈 화면)
+
+로그인 후 사용자에게 건강 데이터를 보여주는 홈 화면입니다.
+
+![메인 화면](https://raw.githubusercontent.com/katusren/HeAilth/main/image/Home.PNG)
+
 
 
