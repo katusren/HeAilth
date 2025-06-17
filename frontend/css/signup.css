@@ -3,20 +3,9 @@
 생성일 : 25.06.13
 파일명 : signup.css
 수정자 : 
+수정일 : 
 설명 : SignUp.html의 화면을 꾸며주는 전용 css 파일
 */
-
-
-body {
-    /* common.css에서 정의된 내용은 제거 */
-    background-color: var(--gray-background);
-    /* 전체 배경색 */
-    align-items: flex-start;
-    min-height: 100vh;
-    overflow: hidden;
-    padding-top: 50px;
-    /* 로고와 컨테이너 전체를 살짝 내리기 위해 추가 */
-}
 
 /* 로고 스타일 (크기 및 여백만 남김) */
 .logo {
@@ -25,8 +14,6 @@ body {
     padding: 0 10px;
 }
 
-/* .logo-icon은 common.css에 있으므로, 여기서는 고유한 스타일만 유지 */
-/* vertical-align: middle;는 flexbox 환경에서 효과가 없으므로 제거 */
 .logo-icon.left-icon {
     margin-right: 8px;
 }
@@ -346,4 +333,37 @@ body {
         margin-right: 0;
         /* 마지막 옵션은 우측 마진 제거 */
     }
+}
+
+.signup-wrapper {
+    display: flex;
+    /* 내부 콘텐츠를 flexbox로 배치 */
+    justify-content: center;
+    /* 수평 중앙 정렬 */
+    align-items: center;
+    /* 수직 중앙 정렬 (필요시) */
+    width: 100%;
+    /* 부모(body)의 100% 너비를 사용 */
+    min-height: 100vh;
+    /* 뷰포트 전체 높이를 사용 */
+    /* background-color: transparent; 또는 background-color: inherit; 로 설정하여 common.css의 배경이 보이도록 */
+    box-sizing: border-box;
+    /* 패딩 포함 너비 계산 */
+}
+
+/* signup-container는 개별 요소의 너비를 제한하고 중앙에 배치 */
+.signup-container {
+    background-color: #ffffff;
+    padding: 30px 45px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    /* 부모 요소의 너비에 맞춤 */
+    max-width: 450px;
+    /* 최대 너비 설정 */
+    text-align: center;
+    /* 내부 텍스트 및 인라인 요소 중앙 정렬 */
+    box-sizing: border-box;
+    /* common.css의 body가 이미 중앙 정렬을 하고 있으므로 margin: auto; 는 필요 없을 수 있습니다. */
+    /* margin: auto;  */
 }

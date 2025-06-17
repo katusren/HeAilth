@@ -18,17 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            // TODO: 여기에 백엔드 API 호출 로직 추가 (fetch API 사용)
-            // 예시:
-            // const response = await fetch('YOUR_BACKEND_LOGIN_API_ENDPOINT', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ userId: username, userPassword: password })
-            // });
-            // const data = await response.json();
-            // if (response.ok) { /* 성공 처리 */ } else { /* 실패 처리 */ }
-
-            // 현재는 개발 단계이므로 콘솔에 출력하고 알림만 띄움
             console.log('로그인 시도 - 아이디:', username, '비밀번호:', password);
             alert(`로그인 시도: ${username}`);
         });

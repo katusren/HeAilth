@@ -40,7 +40,7 @@ AI 기술을 바탕으로 사용자의 건강한 삶을 지원하는 지능형 �
 | 분야 | 기술 |
 |------|------|
 | 언어 | Java |
-| UI 프레임워크 | JavaFX |
+| UI 프레임워크 | HTML, CSS, JSP |
 | DB | MariaDB |
 | AI 처리 | OpenAI API (GPT 기반) |
 | (예정) 프론트엔드 | React |
@@ -60,7 +60,7 @@ _위 ERD를 클릭하시면 상세 스키마 설명을 볼 수 있습니다._
 ## 🚀 향후 개발 계획
 
 ### 📌 기술 리팩토링
-- JavaFX로 구현된 UI를 React로 리팩토링하여 **현대적이고 반응형 UI/UX** 제공
+- HTML로 구현된 UI를 React로 리팩토링하여 **현대적이고 반응형 UI/UX** 제공
 - Electron을 통해 **Windows/macOS용 데스크톱 앱 패키징** 진행
 
 ### 📱 플랫폼 확장
@@ -79,13 +79,15 @@ _위 ERD를 클릭하시면 상세 스키마 설명을 볼 수 있습니다._
 
 **문원주 (카츠렌)**  
 - AI 기술과 일상 문제 해결의 접점을 고민하며 기획부터 구현까지 주도적으로 개발  
-- Java와 JavaFX로 프로젝트를 실현하고 있으며,  
+- Java와 HTML으로 프로젝트를 실현하고 있으며,  
   **React와 Electron 기술을 실전 프로젝트에 직접 적용하며 학습하는 것을 목표로 하고 있습니다**  
 - 개발뿐만 아니라 UX 관점에서 사용자와의 상호작용 경험을 향상시키는 데에도 많은 관심을 가지고 있습니다.
 
 ---
 
 ## 📷 예시 화면 (추후 이미지 추가 예정)
+(https://raw.githubusercontent.com/katusren/HeAilth/main/image/Heailth_Login.PNG)
 
+(https://raw.githubusercontent.com/katusren/HeAilth/main/image/Home.PNG)
 
 

@@ -1,3 +1,4 @@
+
 // 생성자 : 문원주
 // 생성일 : 25.06.13
 // 파일명 : modal.js
@@ -75,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 폼 제출 (프론트엔드 더미 로직) ---
 
     // 아이디 찾기 폼 제출
     const findIdForm = findIdModal.querySelector('.modal-form');
